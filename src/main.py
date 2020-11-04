@@ -6,8 +6,9 @@ from scraper import FinancialScraper
 
 def main():
     scraper = FinancialScraper()
-    urls = scraper.getUrlByCompany("bbva")
+    urls = scraper.getUrlByCompany("acs")
     info = scraper.getInfoByUrl(urls)
+    scraper.data_to_csv()
     print(info)
 
 

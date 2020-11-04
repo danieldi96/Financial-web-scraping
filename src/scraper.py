@@ -1,5 +1,6 @@
 from urllib import request
 from urllib import error
+from urllib import parse
 import re
 import unicodedata
 from bs4 import BeautifulSoup
@@ -17,10 +18,7 @@ class FinancialScraper():
             "isin":"ISIN=",
             "clv":"ClvEmis="
         }
-        self.info = {
-            "isin" : "",
-            "data" : {}
-        }
+        self.info = []
 
     def getUrlByCompany(self, nameCompany):
         url = []
@@ -45,18 +43,27 @@ class FinancialScraper():
             except error.HTTPError as e:
                 print("HTTPERROR =", str(e.code))
             finally:
-                if self.subdomains.get("getCompany") in html.url:
+                parsed = parse.urlparse(url)
+                a = parse.parse_qs(parsed.query)["ISIN"]
+                x = re.match("^ES*", a[0])
+                if x is not None:
+                    dic = {"isin" : "", "data" : {}}
                     soup = BeautifulSoup(html, "lxml")
                     label = soup.find(attrs={"class" : re.compile(r"TituloPag")})
-                    self.info["data"]["name"] = label.next_element
-                    table = soup.find(id="ctl00_Contenido_tblValor")
-                    for tr in table.findAll("tr"):
-                        children = tr.findChildren("td")
-                        self.info["isin"] = children[1].next_element
-                        self.info["data"]["ticker"] = children[3].next_element
-                        self.info["data"]["nominal"] = children[5].next_element
-                        self.info["data"]["market"] = children[7].next_element
-                        self.info["data"]["capital"] = children[9].next_element
+                    if label is not None:
+                        dic["data"]["name"] = label.next_element
+                        table = soup.find(id="ctl00_Contenido_tblValor")
+                        for tr in table.findAll("tr"):
+                            children = tr.findChildren("td")
+                            dic["isin"] = children[1].next_element
+                            dic["data"]["ticker"] = children[3].next_element
+                            dic["data"]["nominal"] = children[5].next_element
+                            dic["data"]["market"] = children[7].next_element
+                            dic["data"]["capital"] = children[9].next_element
+                        self.info.append(dic)
         return self.info
+
+    def data_to_csv(self):
+        print("")
 
     
