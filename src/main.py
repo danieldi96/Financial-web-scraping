@@ -6,10 +6,10 @@ from scraper import FinancialScraper
 
 def main():
     scraper = FinancialScraper()
-    urls = scraper.getUrlByCompany("acs")
+    urls = scraper.getUrlByCompany("santander")
     info = scraper.getInfoByUrl(urls)
-    print(info)
-    scraper.data_to_csv()
+    scraper.data_to_csv("santander.csv")
+
 
 
 if __name__ == "__main__":
