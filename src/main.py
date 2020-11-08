@@ -8,8 +8,8 @@ def main():
     scraper = FinancialScraper()
     urls = scraper.getUrlByCompany("acs")
     info = scraper.getInfoByUrl(urls)
-    scraper.data_to_csv()
     print(info)
+    scraper.data_to_csv()
 
 
 if __name__ == "__main__":
