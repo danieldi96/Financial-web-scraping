@@ -11,4 +11,24 @@ attributes = {
             "clv":"ClvEmis="
         }
 
+tags = {
+    "name": "name",
+    "isin": "isin",
+    "ticker": "ticker",
+    "nominal": "nominal",
+    "market": "market",
+    "capital": "capital",
+    "stocks" :"stocks"
+}
 
+historic = {
+    "date" : "Date",
+    "close": "Close",
+    "ref" : "Reference",
+    "vol": "Volume",
+    "turnover": "Turnover",
+    "last": "Last",
+    "high": "High",
+    "low": "Low",
+    "avg": "Average",
+}

@@ -4,11 +4,14 @@ from scraper import FinancialScraper
 # lxml
 # BeautifulSoup
 
+# Parameter to define
+Company = "santander"
+
 def main():
     scraper = FinancialScraper()
-    urls = scraper.getUrlByCompany("santander")
+    urls = scraper.getUrlByCompany(Company)
     info = scraper.getInfoByUrl(urls)
-    scraper.data_to_csv("santander.csv")
+    scraper.data_to_csv(Company+".csv")
 
 
 

@@ -53,16 +53,16 @@ class FinancialScraper():
         soup = BeautifulSoup(html, "lxml")
         label = soup.find(attrs={"class" : re.compile(r"TituloPag")})
         assert (label != None)
-        dic["name"] = self.cleanData(label.next_element)
+        dic[cnf.tags.get("name")] = self.cleanData(label.next_element)
         table = soup.find(id="ctl00_Contenido_tblValor")
         for tr in table.findAll("tr"):
             children = tr.findChildren("td")
-            dic["isin"] = self.cleanData(children[1].next_element)
-            dic["ticker"] = self.cleanData(children[3].next_element)
-            dic["nominal"] = self.cleanData(children[5].next_element)
-            dic["market"] = self.cleanData(children[7].next_element)
-            dic["capital"] = self.cleanData(children[9].next_element)
-        if dic["market"] == "Mercado Continuo":
+            dic[cnf.tags.get("isin")] = self.cleanData(children[1].next_element)
+            dic[cnf.tags.get("ticker")] = self.cleanData(children[3].next_element)
+            dic[cnf.tags.get("nominal")] = self.cleanData(children[5].next_element)
+            dic[cnf.tags.get("market")] = self.cleanData(children[7].next_element)
+            dic[cnf.tags.get("capital")] = self.cleanData(children[9].next_element)
+        if dic[cnf.tags.get("market")] == "Mercado Continuo":
             self.info = dic
 
     def getHistoricInfo(self, isin):
@@ -76,20 +76,20 @@ class FinancialScraper():
                 children = tr.findChildren("td")
                 dic = {}
                 if len(children) > 0:
-                    dic["Date"] = self.cleanData(children[0].next_element)
-                    dic["Close"] = self.cleanData(children[1].next_element)
-                    dic["Reference"] = self.cleanData(children[2].next_element)
-                    dic["Volume"] = self.cleanData(children[3].next_element)
-                    dic["Turnover"] = self.cleanData(children[4].next_element)
-                    dic["Last"] = self.cleanData(children[5].next_element)
-                    dic["High"] = self.cleanData(children[6].next_element)
-                    dic["Low"] = self.cleanData(children[7].next_element)
-                    dic["Average"] = self.cleanData(children[8].next_element)
+                    dic[cnf.historic.get("date")] = self.cleanData(children[0].next_element)
+                    dic[cnf.historic.get("close")] = self.cleanData(children[1].next_element)
+                    dic[cnf.historic.get("ref")] = self.cleanData(children[2].next_element)
+                    dic[cnf.historic.get("vol")] = self.cleanData(children[3].next_element)
+                    dic[cnf.historic.get("turnover")] = self.cleanData(children[4].next_element)
+                    dic[cnf.historic.get("last")] = self.cleanData(children[5].next_element)
+                    dic[cnf.historic.get("high")] = self.cleanData(children[6].next_element)
+                    dic[cnf.historic.get("lww")] = self.cleanData(children[7].next_element)
+                    dic[cnf.historic.get("avg")] = self.cleanData(children[8].next_element)
                     res.append(dic)
-            self.info["stocks"] = res
+            self.info[cnf.tags.get("stocks")] = res
 
     def data_to_csv(self, filename):
-        file = open("../doc/"+filename, "w+")
+        file = open("../results/"+filename, "w+")
         
         for key in self.info:
             if key == "stocks":
