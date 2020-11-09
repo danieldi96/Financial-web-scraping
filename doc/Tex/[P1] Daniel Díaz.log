@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.6)  9 NOV 2020 23:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.10.6)  9 NOV 2020 23:55
 entering extended mode
 **"./[P1] Daniel Díaz.tex"
 ("[P1] Daniel Díaz.tex"
@@ -687,37 +687,43 @@ Overfull \hbox (7.65508pt too wide) in paragraph at lines 90--91
 os ha si-do \OT1/cmr/bx/n/12 No-Comercial
  []
 
-
-Overfull \hbox (9.52641pt too wide) in paragraph at lines 99--100
+[6pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.116 E
+       l dataset se ha publicado en Zenodo (https://zenodo.org/record/426540...
+]
+Overfull \hbox (9.52641pt too wide) in paragraph at lines 116--117
 []\OT1/cmr/m/n/12 El da-ta-set se ha pu-bli-ca-do en Ze-no-do (https://zenodo.o
 rg/record/4265402),
  []
 
-[6]
-Underfull \hbox (badness 6300) in paragraph at lines 111--112
+[7]
+Underfull \hbox (badness 6300) in paragraph at lines 128--129
 []\OT1/cmr/m/n/12 'Licencias de uso aso-cia-das a las ini-cia-ti-vas de da-tos 
 abier-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 \OT1/cmr/m/n/12 tos en Es-pa~na'. Ver en: []$\OT1/cmtt/m/n/12 https : / / datos
  . gob . es / es / noticia /
  []
 
 
-Overfull \hbox (65.5278pt too wide) in paragraph at lines 111--112
+Overfull \hbox (65.5278pt too wide) in paragraph at lines 128--129
 \OT1/cmtt/m/n/12 licencias-[]de-[]uso-[]asociadas-[]las-[]iniciativas-[]de-[]da
 tos-[]abiertos-[]en-[]espana$[] 
  []
 
 
-Underfull \hbox (badness 2790) in paragraph at lines 114--115
+Underfull \hbox (badness 2790) in paragraph at lines 131--132
 []\OT1/cmr/m/n/12 'Github del pro-yec-to'. Ver en: []$\OT1/cmtt/m/n/12 https : 
 / / github . com / danieldi96 /
  []
 
-[7
+[8
 
 ] ("[P1] Daniel Díaz.aux"
 LaTeX Info: Redefining \. on input line 25.
@@ -725,23 +731,27 @@ LaTeX Info: Redefining \% on input line 25.
 )
 Package rerunfilecheck Info: File `"[P1] Daniel Díaz".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 18726 strings out of 480236
- 352059 string characters out of 2890432
+ 18731 strings out of 480236
+ 352119 string characters out of 2890432
  648959 words of memory out of 3000000
- 34900 multiletter control sequences out of 15000+200000
+ 34902 multiletter control sequences out of 15000+200000
  540465 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,7n,110p,951b,492s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 108i,12n,110p,951b,492s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb>
-Output written on "[P1] Daniel Díaz.pdf" (7 pages, 142181 bytes).
+Output written on "[P1] Daniel Díaz.pdf" (8 pages, 143323 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
+ 127 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
