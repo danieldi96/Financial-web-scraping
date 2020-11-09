@@ -40,7 +40,7 @@ class FinancialScraper():
     def getInfoByUrl(self, urls):
         for url in urls:
             parsed = parse.urlparse(url)
-            reQuery = parse.parse_qs(parsed.query)["ISIN"]
+            reQuery = parse.parse_qs(parsed.query)[cnf.tags.get("isin")]
             regex = re.match("^ES*", reQuery[0])
             if regex is not None:
                 self.getFinancialInfo(url)
@@ -90,15 +90,25 @@ class FinancialScraper():
 
     def data_to_csv(self, filename):
         file = open("../results/"+filename, "w+")
-        
-        for key in self.info:
-            if key == "stocks":
-                file.write("\n")
-                for i in self.info[key]:
-                    for j in i:
-                        file.write(i[j]+",")
-                    file.write("\n")
-            else:
-                file.write(self.info[key]+",")
 
+        for key in self.info:
+            if key != cnf.tags.get("stocks"):
+                file.write(key+",")
+        file.write("\n")
+
+        for key in self.info:
+            if key != cnf.tags.get("stocks"):
+                file.write(self.info[key]+",")
+        file.write("\n")
+
+        file_stocks = open("../results/stocks_"+filename, "w+")
+
+        for i in cnf.historic:
+            file_stocks.write(cnf.historic.get(i)+",")
+        file_stocks.write("\n")
+
+        for i in self.info[cnf.tags.get("stocks")]:
+            for j in i:
+                file_stocks.write(i[j]+",")
+            file_stocks.write("\n")
     

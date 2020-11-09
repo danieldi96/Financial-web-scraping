@@ -13,7 +13,7 @@ attributes = {
 
 tags = {
     "name": "name",
-    "isin": "isin",
+    "isin": "ISIN",
     "ticker": "ticker",
     "nominal": "nominal",
     "market": "market",
