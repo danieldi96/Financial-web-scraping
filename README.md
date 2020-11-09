@@ -1,4 +1,4 @@
-#Práctica 1. Información bursátil de una compañía cotizada en el IBEX35
+# Práctica 1. Información bursátil de una compañía cotizada en el IBEX35
 
 ## Descripción
 Esta es la primera práctica de la asignatura _Tipología y ciclo de vida de los datos_, impartida en el Máster de Ciencia de Datos de la Universitat Oberta de Catalunya. Se emplean técnicas de _Web Scraping_ mediante el lenguaje de programción _Python_, además de sus librerías _BeautifulSoup_ y _lxml_. La información se ha extraído de _www.bolsamadrid.es_ y el conjunto de datos hace referencia a cualquier empresa del IBEX35.
