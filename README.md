@@ -20,8 +20,8 @@ Esta práctica ha sido realizada por **Daniel Díaz Fernández**
 * **results/<nombre_escogido>.csv**: Archivo con los datos obtenidos de la compañía obtenida en formato CSV.
 * **results/stocks_<nombre_escogido>.csv**: Archivo con los datos históricos obtenidos de la compañía obtenida en formato CSV.
 
-## Zenodo
-El DOI Obtenido para el acceso a los CSV publicados en Zenodo es: https://zenodo.org/record/4265402
+## Zenodo [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4265402.svg)](https://doi.org/10.5281/zenodo.4265402)
+El link obtenido para el acceso a los CSV publicados en Zenodo es: https://zenodo.org/record/4265402
 
 ## Recursos
 
